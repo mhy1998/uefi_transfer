@@ -1,0 +1,59 @@
+[Defines]
+  INF_VERSION                    = 0x00010005
+  BASE_NAME                      = Server
+  FILE_GUID                      = 4ea97c46-742a-4efd-bf42-747021e3c15b
+  MODULE_TYPE                    = UEFI_APPLICATION
+  VERSION_STRING                 = 1.0
+  ENTRY_POINT                    = Server
+
+#
+#  VALID_ARCHITECTURES           = IA32 X64 IPF
+#
+
+[Sources]
+  Server.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  ShellPkg/ShellPkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+  AmiCompatibilityPkg/AmiCompatibilityPkg.dec
+  AmiNetworkPkg/AmiNetworkPkg.dec
+  ClientOneSiliconPkg/SiPkg.dec
+  StdLib/StdLib.dec
+
+[LibraryClasses]
+  UefiLib
+  DebugLib
+  PrintLib
+  BaseLib
+  BaseMemoryLib
+  ShellCEntryLib
+  TimerLib
+  PciSegmentLib
+  IoLib
+  MemoryAllocationLib
+  UefiBootServicesTableLib
+  UefiApplicationEntryPoint
+  AmiDxeLib
+  ShellLib
+  LibStdLib
+  LibStdio
+  LibString
+  EfiSocketLib
+  BsdSocketLib
+  LibNetUtil
+  
+[Protocols]
+  gEfiSimpleTextOutProtocolGuid
+  gEfiSimpleTextInProtocolGuid
+  gEfiTcp4ProtocolGuid
+  gEfiTcp4ServiceBindingProtocolGuid
+  gEfiDevicePathProtocolGuid
+  gEfiDevicePathToTextProtocolGuid
+  gEfiPciIoProtocolGuid
+  gEfiShellInterfaceGuid
+
+[BuildOptions]
+
+MSFT:*_*_X64_CC_FLAGS     = /wd4267 /wd4244

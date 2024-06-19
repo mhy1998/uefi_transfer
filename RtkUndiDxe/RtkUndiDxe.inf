@@ -1,0 +1,14 @@
+#==================================================
+# Porting if needed.
+#==================================================
+[Defines]
+	INF_VERSION                    = 0x00010005
+	BASE_NAME                      = RtkUndiDxe
+	FILE_GUID                      = ACDF4E35-4C7F-4C7B-B3FF-58373C3AAC25
+	MODULE_TYPE                    = DXE_DRIVER
+	VERSION_STRING                 = 1.0
+
+[Binaries.X64]
+  PE32|RtkUndiDxe.efi|*
+
+
